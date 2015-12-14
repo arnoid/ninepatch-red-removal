@@ -1,0 +1,35 @@
+group 'org.arnoid'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.6
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir "src/main/java"
+        }
+        resources {
+            srcDir "src/main/resources"
+        }
+    }
+}
+
+jar {
+    manifest {
+        attributes("Main-Class": "org.arnoid.NinePatchRedBorderRemoval",
+                "Implementation-Version": version)
+    }
+}
+
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
